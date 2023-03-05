@@ -31,10 +31,11 @@ const PORT = process .env.PORT || 6000
 const server = app.listen(PORT, console.log(`Server Started on PORT ${PORT}`.yellow.bold));
 
 const io = require('socket.io')(server, {
-  pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
-  },
+    origin: "*",
+    methods: ["GET", "POST"],
+    credentials: true
+  }
 });
 
 io.on("connection", (socket) => {
