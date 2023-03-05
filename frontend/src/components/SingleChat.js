@@ -10,7 +10,7 @@ import './styles.css';
 import ScrollableChat from './ScrollableChat';
 import { io } from 'socket.io-client';
 
-const ENDPOINT = "http://localhost:6000";
+//const ENDPOINT = "http://localhost:6000";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -87,7 +87,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     }, [selectedChat]);
 
     useEffect(() => {
-        socket = io(ENDPOINT);
+        socket = io("http://localhost:6000");
         socket.emit("setup", user);
         socket.on("connection", () => setSocketConnected(true));
     }, []);
