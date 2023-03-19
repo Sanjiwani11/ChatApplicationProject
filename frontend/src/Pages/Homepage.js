@@ -27,7 +27,7 @@ const Homepage = () => {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize='4xl' fontFamily="Work sans" color="black" textAlign="center">My Chat App</Text>
+        <Text fontSize='4xl' fontFamily="Work sans" color="black" textAlign="center">CommunicatePro</Text>
       </Box>
       <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
         <Tabs isFitted variant="soft-rounded">

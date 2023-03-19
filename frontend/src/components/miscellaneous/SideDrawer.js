@@ -3,7 +3,7 @@ import { Button } from "@chakra-ui/button";
 import { Box, Text } from "@chakra-ui/layout";
 import { Avatar, Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Input, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Spinner, Tooltip, useDisclosure } from "@chakra-ui/react";
 //import Toast from "@chakra-ui/react";
-import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import { ChatState } from "../../Context/ChatProvider";
 import ProfileModal from './ProfileModal';
 import { useHistory } from 'react-router-dom';
@@ -20,7 +20,7 @@ const SideDrawer = () => {
   const [loading, setLoading] = useState(false)
   const [loadingChat, setLoadingChat] = useState();
 
-  const { user, setSelectedChat, chats, setChats } = ChatState();
+  const { user, setSelectedChat, chats, setChats} = ChatState();
 
   const history = useHistory();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -111,14 +111,8 @@ const SideDrawer = () => {
             <Text display={{ base: "none", md: "flex" }} px="4">Search User</Text>
         </Button>
         </Tooltip>
-        <Text fontSize="2xl" fontFamily="Work sans">MyChat App</Text>
+        <Text fontSize="2xl" fontFamily="Work sans">CommunicatePro</Text>
         <div>
-          <Menu>
-            <MenuButton p="1">
-              <BellIcon fontSize="2xl" margin="1"/>
-            </MenuButton>
-            {/* <MenuList></MenuList> */}
-          </Menu>
           <Menu>
             <MenuButton as={Button} rightIcon={< ChevronDownIcon/>}>
               <Avatar size="sm" cursor="pointer" name={ user.name} />
